@@ -9,4 +9,25 @@ public class Capital extends City {
 		this.monument = monument;
 	}
 
+	/**
+	 * @return the monument
+	 */
+	public String getMonument() {
+		return monument;
+	}
+
+	/**
+	 * @param monument the monument to set
+	 */
+	public void setMonument(String monument) {
+		this.monument = monument;
+	}
+
+	@Override
+	public String toString() {
+		return "Capital [monument=" + monument + "]";
+	}
+	
+	
+
 }
