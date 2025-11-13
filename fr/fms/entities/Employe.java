@@ -35,7 +35,7 @@ public class Employe extends Person{
 
 
 
-	public void setSalary(int salary) {
+	public void setSalary(int salary) throws Exception {
 		if(salary < MIN_WAGE) {
 			throw new Exception("Veuillez mettre une comission plus grande que "+MIN_WAGE);
 		}
