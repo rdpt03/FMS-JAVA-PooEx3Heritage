@@ -94,8 +94,8 @@ public class City {
 	//ex1.6
 	@Override
 	public String toString() {
-	    return "Ville de " + this.cityName + " en/au " + this.countryName +
-	           (this.inhabitants > 0 ? " ayant " + this.inhabitants + " habitants" : "");
+	    return "Ville de " + this.cityName + " en/au " + this.countryName;// +
+	           //(this.inhabitants > 0 ? " ayant " + this.inhabitants + " habitants" : "");
 	}
 
 }
