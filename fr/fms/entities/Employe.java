@@ -4,6 +4,7 @@ public class Employe extends Person{
 	private String entreprise;
 	private int salary;
 	private static int MIN_WAGE = 0;
+	private static double tax = 0.2;
 	
 	
 	public Employe(String lastName, String firstName, int age, String adress, City bornCity, String entreprise, int salary) throws Exception {
@@ -42,7 +43,9 @@ public class Employe extends Person{
 		this.salary = salary;
 	}
 
-
+	public void remuneration() {
+		System.out.println("Salaire mensuel de "+super.getPrenom()+" "+super.getNom()+" : "+(this.salary * (1-tax)));
+	}
 
 	@Override
 	public String toString() {

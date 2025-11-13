@@ -5,6 +5,7 @@ public class Commercial extends Person{
 	private String entreprise;
 	private double comission;
 	private static double MIN_WAGE = 0.0;
+	private static int companyRevenue = 50000;
 	
 	
 	public Commercial(String lastName, String firstName, int age, String adress, City bornCity, String entreprise, double comission) throws Exception {
@@ -41,6 +42,11 @@ public class Commercial extends Person{
 			throw new Exception("Veuillez mettre une comission plus grande que "+MIN_WAGE);
 		}
 		this.comission = comission;
+	}
+	
+	
+	public void remuneration() {
+		System.out.println("Salaire mensuel de "+super.getPrenom()+" "+super.getNom()+" : "+companyRevenue * (this.comission/100));
 	}
 
 

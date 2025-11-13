@@ -1,18 +1,35 @@
 package fr.fms.entities;
 
+import java.util.ArrayList;
+
 public class TestPerson {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		Employe billgate = new Employe("Gate" , "Bill" , 65,"USA", new Capital("Washington","USA",7600000,"W-M"),"Fondation B&M",100000);
-		Employe elonmusk = new Employe("Musk" , "Elon" , 49,"Palo alto", new City("Pretoria","South-Africa",800000),"Tesla",150000);
+		ArrayList<Person> listOfWorkers = new ArrayList<>();
 		
-		System.out.println(billgate);
-		System.out.println(elonmusk);
+		listOfWorkers.add(new Employe("Gate" , "Bill" , 65,"USA", new Capital("Washington","USA",7600000,"W-M"),"Fondation B&M",100000));
+		listOfWorkers.add(new Employe("Musk" , "Elon" , 49,"Palo alto", new City("Pretoria","South-Africa",800000),"Tesla",150000));
+		listOfWorkers.add(new Commercial("Dupont", "robert", 50, "rue des rosiers à Toulouse", new City("Limoges" , "France" , 133000),"brico", 5.0));
 		
-		Commercial robertdupont = new Commercial("Dupont", "robert", 50, "rue des rosiers à Toulouse", new City("Limoges" , "France" , 133000),"brico", 5.0);
 		
-		System.out.println(robertdupont);
+		for (Person worker : listOfWorkers) {
+			System.out.println(worker.toString());
+		}
+		
+		
+		for (Person worker : listOfWorkers) {
+			if(worker instanceof Employe) {
+				Employe employe = (Employe) worker;
+				employe.remuneration();
+			}
+			else if(worker instanceof Commercial) {
+				Commercial commercial = (Commercial) worker;
+				commercial.remuneration();
+			}
+			
+		}
+		
 	}
 
 }
